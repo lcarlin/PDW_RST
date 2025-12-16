@@ -1,0 +1,90 @@
+# PDW Rust Configuration File
+# Personal Data Warehouse - Configuration in TOML format
+
+[directories]
+# Input directory for Excel files
+dir_in = "./input/"
+
+# Output directory for reports and exports
+dir_out = "./output/"
+
+# Database directory for SQLite files
+database_dir = "./database/"
+
+# Log directory for system logs
+log_dir = "./logs/"
+
+[file_types]
+# Input file type (Excel format)
+type_in = "xlsx"
+
+# Output file type for reports
+type_out = "xlsx"
+
+# Database file extension
+db_file_type = "db"
+
+# Log file name
+log_file = "PDW.SysMap.log"
+
+# Input Excel file name (without extension)
+input_file = "PDW"
+
+# Output database file name (without extension)
+out_db_file = "PDW"
+
+# Output report file name (without extension)
+out_rpt_file = "PDW_REPORTS.v2"
+
+# Optional: Transient data file name
+transient_data_file = "Lancamentos_Gerais_TMP"
+
+[settings]
+# Application version (must match binary version)
+current_version = "9.11.0"
+
+# API version (optional)
+api_version = "2.0.0"
+
+# Excel sheet names for configuration and data
+guiding_table = "GUIDING"
+types_of_entries = "TiposLancamentos"
+general_entries_table = "LANCAMENTOS_GERAIS"
+
+# Processing control flags
+run_data_loader = true
+run_reports = true
+overwrite_db = true
+create_pivot = true
+rpt_single_file = true
+
+# Threading configuration (disabled for SQLite compatibility)
+parallels = 89
+multithreading = false
+
+# Data quality settings
+save_discarted_data = false
+discarted_data_table = "discarted_data"
+
+# Pivot table names
+anual_pivot_table = "HistoricoAnual"
+full_pivot_table = "HistoricoGeral"
+
+# Dynamic reports configuration
+run_dinamic_report = true
+din_report_guiding = "General_din_reports"
+
+# Export settings
+export_transient_data = false
+transient_data_table = "Transient_data"
+transient_data_column = "Origem"
+export_other_types = false
+
+# Additional table names
+dayly_progress = "contagem_diaria"
+splt_paymnt_tab = "PARCELAMENTOS"
+out_res_pmnt_tab = "Resumo_Parcelamentos"
+monthly_summaties = "Resumido_In_Out"
+
+# YAML queries file
+yaml_sql_file = "PDW_QUERIES.yaml"
